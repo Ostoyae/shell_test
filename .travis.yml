@@ -11,7 +11,7 @@ script:
   - cd ./simple_shell
   - COMPILE=$(cat ../modules_list | tr '\r\n' ' ')
   - gcc -Wall -Werror -Wextra -pedantic -g3 -std=c90 $COMPILE -o masu
-  - cp masu ../ && cd ..
+  - ls -l
   - ls -l | ./masu
   - echo "Hello" | ./masu
   - echo "Done!"
