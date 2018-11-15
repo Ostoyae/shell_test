@@ -8,8 +8,9 @@ git:
 env:
   - SHELL_NAME="marsu" COMPITE="nile"
   
-
 before_script:
+  - pwd
+  - git pull
   - export COMPILE=$(cat modules_list | tr '\r\n' ' ')
   - echo $COMPILE
   - cd ./test_suite
