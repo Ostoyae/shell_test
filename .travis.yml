@@ -9,7 +9,7 @@ env:
   - SHELL_NAME="marsu" COMPITE="nile" REPO="nil"
   
 before_script:
-  - export RROOT=$(pwd)
+  - export REPO=$(pwd)
   - export COMPILE=$(cat modules_list | tr '\r\n' ' ')
   - echo $COMPILE
   - cd ./test_suite
