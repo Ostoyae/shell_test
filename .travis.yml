@@ -9,7 +9,7 @@ env:
   - SHELL_NAME="marsu" COMPITE="nile" REPO="nil"
   
 before_script:
-  - export REPO=pwd
+  - export REPO=$(pwd)
   - export COMPILE=$(cat modules_list | tr '\r\n' ' ')
   - echo $COMPILE
   - cd ./test_suite
@@ -22,4 +22,6 @@ script:
   - echo "ls -l" | ./$SHELL_NAME
   - echo "Hello" | ./$SHELL_NAME
   - echo "Done!"
-  - cd $REPO
+  - mv $SHELL_NAME ../test_suite && cd ../test_suite
+  - ./check_simple_shell.bash
+  
