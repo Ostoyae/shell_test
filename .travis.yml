@@ -6,8 +6,7 @@ git:
   submodules: true
 
 env:
-  - SHELL_NAME="marsu"
-  - COMPITE="nile"
+  - SHELL_NAME="marsu" COMPITE="nile"
   
 
 before_script:
