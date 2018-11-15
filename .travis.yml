@@ -2,5 +2,18 @@ sudo: required
 
 language: c
 
+git:
+  submodules: true
+
 before_script:
-  - git
+  - alias gccw="gcc -Wall -Werror -Wextra -pedantic -g3 -std=c90"
+  - cd ./simple_shell
+  - cat ../modules_list | tr '\r\n' ' ' | xargs -i{} gccw {} -o masu
+  - cp .. && cd ..
+  
+script:
+  - echo "Hello"
+  - ./masu
+  - echo "Hello"
+  - exit
+  - echo "Done!"
