@@ -3,10 +3,7 @@ sudo: false
 language: c
 
 git:
-  submodules: false
-
-before_script:
-  - git submodules --intit --recursive
+  submodules: true
 
 script:
   - cd ./simple_shell
