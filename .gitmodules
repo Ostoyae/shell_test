@@ -6,3 +6,4 @@
 [submodule "simple_shell"]
 	path = simple_shell
 	url = https://github.com/suhearsawho/simple_shell.git
+	branch = develop
