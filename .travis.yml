@@ -1,4 +1,4 @@
-sudo: required
+sudo: false
 
 language: c
 
@@ -10,10 +10,11 @@ before_script:
   - COMPILE=$(cat ../modules_list | tr '\r\n' ' ')
   - gcc -Wall -Werror -Wextra -pedantic -g3 -std=c90 $COMPILE -o masu
   - cp masu ../ && cd ..
+  - ./masu
 
 script:
   - echo "Hello"
-  - ./masu
-  - echo "Hello"
+  - ls -l
   - exit
+  - echo "Hello" | ./masu
   - echo "Done!"
