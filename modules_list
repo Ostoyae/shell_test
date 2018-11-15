@@ -1,4 +1,5 @@
 main.c
+buildin.c
 prompt_util.c
 string.c
 strtok.c
