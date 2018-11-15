@@ -1,5 +1,6 @@
 [submodule "simple_shell"]
 	path = simple_shell
+	branch = develop
 	url = https://github.com/suhearsawho/simple_shell.git
 [submodule "test_suite"]
 	path = test_suite

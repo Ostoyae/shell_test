@@ -6,7 +6,7 @@ git:
   submodules: true
 
 before_script:
-  
+
 script:
   - cd ./simple_shell
   - COMPILE=$(cat ../modules_list | tr '\r\n' ' ')
