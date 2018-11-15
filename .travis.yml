@@ -7,12 +7,14 @@ git:
 
 env:
   - SHELL_NAME="marsu"
-  - $COMPITE="nile"
+  - COMPITE="nile"
   
 
 before_script:
   - export COMPILE=$(cat modules_list | tr '\r\n' ' ')
-  - sed  "s/ENTER_NAME_OF_YOUR_SHELL_HERE/${SHELL_NAME}/g" ./test_suit/config
+  - echo $COMPILE
+  - cd ./test_suite
+  - sed  "s/ENTER_NAME_OF_YOUR_SHELL_HERE/${SHELL_NAME}/g" config
 
 script:
   - cd ./simple_shell
