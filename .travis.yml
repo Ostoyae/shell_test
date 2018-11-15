@@ -24,4 +24,5 @@ script:
   - echo "Done!"
   - mv $SHELL_NAME ../test_suite && cd ../test_suite
   - ./check_simple_shell.bash
+  - ./tools/scan_line
   
