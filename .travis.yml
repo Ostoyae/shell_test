@@ -5,13 +5,18 @@ language: c
 git:
   submodules: true
 
-before_script:
+env:
+  - SHELL_NAME="marsu"
+  - $COMPITE="nile"
+  
 
+before_script:
+  - export COMPILE=$(cat modules_list | tr '\r\n' ' ')
+  - sed  "s/ENTER_NAME_OF_YOUR_SHELL_HERE/${SHELL_NAME}/g" ./test_suit/config
 
 script:
   - cd ./simple_shell
-  - COMPILE=$(cat ../modules_list | tr '\r\n' ' ')
-  - gcc -Wall -Werror -Wextra -pedantic -g3 -std=c90 $COMPILE -o masu
-  - echo "ls -l" | ./masu
-  - echo "Hello" | ./masu
+  - gcc -Wall -Werror -Wextra -pedantic -g3 -std=c90 $COMPILE -o $SHELL_NAME
+  - echo "ls -l" | ./$SHELL_NAME
+  - echo "Hello" | ./$SHELL_NAME
   - echo "Done!"
