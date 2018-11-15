@@ -6,15 +6,15 @@ git:
   submodules: true
 
 env:
-  - SHELL_NAME="marsu" COMPITE="nile" 
+  - SHELL_NAME="marsu" COMPITE="nile" REPO="nil"
   
 before_script:
-  - pwd
+  - export RROOT=$(pwd)
   - export COMPILE=$(cat modules_list | tr '\r\n' ' ')
   - echo $COMPILE
   - cd ./test_suite
   - sed  -i "s/ENTER_NAME_OF_YOUR_SHELL_HERE/${SHELL_NAME}/g" config
-  - cd ~
+  - cd REPO
 
 script:
   - cd ./simple_shell
@@ -22,3 +22,4 @@ script:
   - echo "ls -l" | ./$SHELL_NAME
   - echo "Hello" | ./$SHELL_NAME
   - echo "Done!"
+  - cd REPO
