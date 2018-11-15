@@ -8,9 +8,10 @@ git:
 before_script:
   - alias gccw="gcc -Wall -Werror -Wextra -pedantic -g3 -std=c90"
   - cd ./simple_shell
-  - cat ../modules_list | tr '\r\n' ' ' | xargs -i{} gccw {} -o masu
+  - COMPILE=$(cat ../modules_list | tr '\r\n' ' ')
+  - gccw $COMPILE -o masu
   - cp .. && cd ..
-  
+
 script:
   - echo "Hello"
   - ./masu
