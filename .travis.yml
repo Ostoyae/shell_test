@@ -6,7 +6,7 @@ git:
   submodules: false
 
 before_script:
-  -git submodules --intit --recursive
+  - git submodules --intit --recursive
 
 script:
   - cd ./simple_shell
