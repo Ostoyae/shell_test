@@ -9,6 +9,8 @@ env:
   - SHELL_NAME="marsu" COMPITE="nile" REPO="nil"
   
 before_script:
+  - git pull --recurse-submodules
+  - git submodule update --remote --recursive
   - export REPO=$(pwd)
   - export COMPILE=$(cat modules_list | tr '\r\n' ' ')
   - echo $COMPILE
