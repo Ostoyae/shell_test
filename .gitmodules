@@ -1,6 +1,7 @@
 [submodule "test_suite"]
 	path = test_suite
 	url = https://github.com/stefansilverio/test_suite.git
+	branch = master
 
 	
 [submodule "simple_shell"]
