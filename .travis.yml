@@ -12,15 +12,16 @@ before_script:
   - git pull --recurse-submodules
   - git submodule update --remote --recursive
   - export REPO=$(pwd)
-  - export COMPILE=$(cat modules_list | tr '\r\n' ' ')
-  - echo $COMPILE
+#   - export COMPILE=$(cat modules_list | tr '\r\n' ' ')
+#   - echo $COMPILE
   - cd ./test_suite
   - sed  -i "s/ENTER_NAME_OF_YOUR_SHELL_HERE/${SHELL_NAME}/g" config
   - cd $REPO
 
 script:
   - cd ./simple_shell
-  - gcc -Wall -Werror -Wextra -pedantic -g3 -std=c90 $COMPILE -o $SHELL_NAME
+#   - gcc -Wall -Werror -Wextra -pedantic -g3 -std=c90 $COMPILE -o $SHELL_NAME
+  - gcc -Wall -Werror -Wextra -pedantic -g3 -std=c90 *.c -o $SHELL_NAME
   - echo "ls -l" | ./$SHELL_NAME
   - echo "Hello" | ./$SHELL_NAME
   - echo "Done!"
