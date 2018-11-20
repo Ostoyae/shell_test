@@ -1,23 +1,21 @@
-
-
 sudo: required
 
 language: c
 
-services:
-  - docker
-
-before_install:
-  - docker pull lemures/dockworker
-  - docker run -it --user 1337:1337 --workdir /home/goliath lemures/dockworker
+#services:
+#  - docker
+#
+#before_install:
+#  - docker pull lemures/dockworker
+#  - docker run -it --user 1337:1337 --workdir /home/goliath lemures/dockworker
 
 git:
   submodules: true
 
 env:
-  - SHELL_NAME="marsu" COMPITE="nile" REPO="nil"
+  - SHELL_NAME="marsu" COMPILE="nil" REPO="nil"
   
-before_script:
+before_script:  
   - git pull --recurse-submodules
   - git submodule update --remote --recursive
   - export REPO=$(pwd)
