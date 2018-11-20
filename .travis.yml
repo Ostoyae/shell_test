@@ -22,10 +22,6 @@ script:
   - cd ./simple_shell
 #   - gcc -Wall -Werror -Wextra -pedantic -g3 -std=c90 $COMPILE -o $SHELL_NAME
   - gcc -Wall -Werror -Wextra -pedantic -g3 -std=c90 *.c -o $SHELL_NAME
-  - ls -l -1
-  - echo "ls" | ./marsu
-  - echo "echo Hello" | ./marsu
-  - echo "Done!"
   - mv $SHELL_NAME ../test_suite && cd ../test_suite
   - ./check_simple_shell.bash
   
