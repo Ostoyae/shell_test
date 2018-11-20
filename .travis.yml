@@ -19,10 +19,10 @@ before_script:
   - cd $REPO
 
 script:
-  - ls -1
   - cd ./simple_shell
 #   - gcc -Wall -Werror -Wextra -pedantic -g3 -std=c90 $COMPILE -o $SHELL_NAME
   - gcc -Wall -Werror -Wextra -pedantic -g3 -std=c90 *.c -o $SHELL_NAME
+  - ls -1
   - echo "ls -l" | ./$SHELL_NAME
   - echo "Hello" | ./$SHELL_NAME
   - echo "Done!"
