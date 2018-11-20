@@ -9,9 +9,7 @@ services:
 
 before_install:
   - docker pull lemures/dockworker
-  - docker run -it --user 1337:1337 \
-    --workdir /home/goliath \
-    lemures/dockworker
+  - docker run -it --user 1337:1337 --workdir /home/goliath lemures/dockworker
 
 git:
   submodules: true
